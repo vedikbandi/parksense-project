@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: parksense-api
+    env: python
+    rootDir: backend  # ← CRITICAL: Tell Render where backend code is
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABRICKS_HOST
+        sync: false
+      - key: DATABRICKS_HTTP_PATH
+        sync: false
+      - key: DATABRICKS_TOKEN
+        sync: false
