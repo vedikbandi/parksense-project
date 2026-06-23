@@ -1,356 +1,407 @@
-\# 🚦 ParkSense - AI-Powered Parking Enforcement Intelligence
+# 🚦 ParkSense - AI-Powered Parking Enforcement Intelligence
 
+**Gridlock Hackathon 2.0 Submission**
 
+[![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi)](https://parksense-api.onrender.com)
+[![Frontend](https://img.shields.io/badge/Frontend-Next.js-000000?logo=next.js)](https://parksense-frontend-parksense2.vercel.app)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-\*\*Gridlock Hackathon 2.0 Submission\*\*
+AI-driven parking intelligence system that analyzes **258,340 parking violations** to enable proactive, data-driven enforcement and congestion mitigation across Bengaluru.
 
+---
 
+## 🚀 Live Demo
 
-\[!\[Backend](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi)](https://parksense-api.onrender.com)
+### Frontend Dashboard
 
-\[!\[Frontend](https://img.shields.io/badge/Frontend-Next.js-000000?logo=next.js)](https://parksense-frontend.vercel.app)
+- https://parksense-frontend-parksense2.vercel.app
+- https://parksense-frontend-ten.vercel.app
 
-\[!\[License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+### Backend API
 
+- https://parksense-api.onrender.com
 
+### API Documentation
 
-AI-driven parking intelligence system that analyzes 258,340 violations to enable proactive, data-driven enforcement and congestion mitigation in Bangalore.
+- https://parksense-api.onrender.com/docs
 
+---
 
+## 📁 Repository Structure
 
-\---
+```text
+parksense-project/
+│
+├── backend/
+│   ├── main.py
+│   ├── requirements.txt
+│   └── render.yaml
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── package.json
+│   └── next.config.ts
+│
+├── docs/
+│   └── notebook.py
+│
+└── README.md
+```
 
+---
 
+## 🎯 Problem Statement
 
-\## 📁 Repository Structure
+### Poor Visibility on Parking-Induced Congestion
 
-parksense-project/ ├── backend/ # FastAPI backend with Databricks integration │ ├── main.py # API endpoints │ ├── requirements.txt # Python dependencies │ └── render.yaml # Render deployment config ├── frontend/ # Next.js dashboard │ ├── app/ # Next.js app directory │ ├── components/ # React components │ └── package.json # Node dependencies ├── docs/ # Documentation and Databricks notebooks │ └── notebook.py # Data analysis notebook └── README.md # This file
+Illegal parking and spillover parking near:
 
-\---
+- Commercial Areas
+- Metro Stations
+- Event Venues
+- Major Junctions
 
+create bottlenecks that reduce carriageway capacity and worsen traffic congestion.
 
+### Challenges
 
-\## 🚀 Live Demo
+- Enforcement is patrol-based and reactive
+- No heatmap of parking violations
+- No congestion impact quantification
+- Difficult to prioritize enforcement zones
+- Limited visibility into hotspot evolution
 
+### Solution
 
+ParkSense uses AI and data analytics to:
 
-\* \*\*Frontend Dashboard\*\*: https://parksense-frontend.vercel.app
+- Detect illegal parking hotspots
+- Quantify congestion impact
+- Rank enforcement priorities
+- Forecast future violations
+- Recommend officer deployment strategies
 
-\* \*\*Backend API\*\*: https://parksense-api.onrender.com
+---
 
-\* \*\*API Docs\*\*: https://parksense-api.onrender.com/docs
+## 🎯 Key Features
 
+### 🧠 AI-Powered Intelligence
 
+- Multi-factor priority scoring
+- ML-optimized weight learning
+- GBT forecasting model
+- Congestion impact estimation
+- Enforcement prioritization
 
-\---
+### 📊 Analytics Dashboard
 
+- Real-time violation statistics
+- Priority zone rankings
+- Violation trend analysis
+- Police station performance metrics
+- Interactive visualizations
 
+### 🗺️ Geographic Intelligence
 
-\## 🎯 Key Features
+- Grid-based hotspot clustering
+- Junction impact analysis
+- Critical zone identification
+- Enforcement heatmaps
 
+---
 
+## 💡 Key Findings
 
-\### 🧠 \*\*AI-Powered Intelligence\*\*
+| Metric | Value |
+|----------|----------|
+| Total Violations | 258,340 |
+| Analysis Period | 152 Days |
+| Grid Zones Analyzed | 1,328 |
+| Critical Zones | 1 |
+| High Priority Zones | 2 |
+| Medium Priority Zones | 9 |
+| Junction Violations | 53.7% |
 
-\* Multi-factor priority scoring (frequency, junction proximity, peak hours, recency)
+### Critical Zone
 
-\* ML-optimized weight learning (R² = 0.783)
+**Grid:** 12.975_77.575 (Upparpet)
 
-\* GBT forecasting model for next-week predictions (R² = 0.631)
+- 20,052 violations
+- 132 violations/day
+- Priority Score: 85/100
+- Immediate enforcement required
 
+### Peak Violation Window
 
+**5:00 AM – 6:00 AM**
 
-\### 📊 \*\*Analytics Dashboard\*\*
+Highest concentration of parking violations citywide.
 
-\* Real-time violation statistics
+---
 
-\* Interactive heatmaps with priority zones
+## 🛠️ Technology Stack
 
-\* Temporal pattern analysis (hourly, daily trends)
+### Backend
 
-\* Police station performance metrics
+- FastAPI
+- Python 3.11
+- Databricks SQL
+- Unity Catalog
+- Spark MLlib
+- Render
 
+### Frontend
 
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Recharts
+- Leaflet
+- OpenStreetMap
 
-\### 🗺️ \*\*Geographic Intelligence\*\*
+### Data Processing
 
-\* Grid-based hotspot clustering (500m resolution)
+- Databricks Serverless Compute
+- PySpark
+- Pandas
+- NumPy
 
-\* Junction impact quantification (53.7% violations at junctions)
+---
 
-\* Critical zone identification (1 Critical, 2 High, 9 Medium zones)
+## 🤖 Machine Learning Models
 
+### Priority Weight Optimization
 
+**Model:** Linear Regression
 
-\---
+**Performance:** R² = 0.783
 
+| Feature | Weight |
+|----------|----------|
+| Frequency | 76.4% |
+| Junction Impact | 20.9% |
+| Peak Hour Impact | 2.7% |
+| Recency | 0.0% |
 
+### Violation Forecasting
 
-\## 💡 Key Findings
+**Model:** Gradient Boosted Trees Regressor
 
+**Performance:** R² = 0.631
 
+Used to forecast next-week parking violations and optimize enforcement planning.
 
-\* \*\*Critical Zone\*\*: Grid 12.975\_77.575 (Upparpet) - 20,052 violations (132/day)
+---
 
-\* \*\*Junction Impact\*\*: 53.7% of violations occur at named junctions
+## 📦 Local Setup
 
-\* \*\*Peak Hours\*\*: 5:00-6:00 AM accounts for highest violations
+### Prerequisites
 
-\* \*\*Dataset\*\*: 258,340 validated violations across 152 days
+- Python 3.11+
+- Node.js 18+
+- Databricks Workspace
+- Unity Catalog Access
 
+---
 
-
-\---
-
-
-
-\## 🛠️ Tech Stack
-
-
-
-\### Backend
-
-\* \*\*Framework\*\*: FastAPI (Python 3.11)
-
-\* \*\*Database\*\*: Databricks SQL (Unity Catalog)
-
-\* \*\*ML\*\*: Spark MLlib (GBT, Linear Regression)
-
-\* \*\*Deployment\*\*: Render.com
-
-
-
-\### Frontend
-
-\* \*\*Framework\*\*: Next.js 16 (React 19)
-
-\* \*\*Charts\*\*: Recharts
-
-\* \*\*Maps\*\*: Leaflet + OpenStreetMap
-
-\* \*\*Styling\*\*: Tailwind CSS
-
-\* \*\*Deployment\*\*: Vercel
-
-
-
-\### Data Processing
-
-\* \*\*Platform\*\*: Databricks (Serverless Compute)
-
-\* \*\*Processing\*\*: PySpark
-
-\* \*\*Analysis\*\*: Pandas, NumPy
-
-
-
-\---
-
-
-
-\## 📦 Installation \& Setup
-
-
-
-\### Prerequisites
-
-\* Python 3.11+
-
-\* Node.js 18+
-
-\* Databricks workspace with Unity Catalog
-
-
-
-\### Backend Setup
-
-
+### Backend Setup
 
 ```bash
-
 cd backend
 
-
-
-\# Install dependencies
-
 pip install -r requirements.txt
+```
 
+Create `.env`
 
+```env
+DATABRICKS_HOST=your_workspace_url
+DATABRICKS_HTTP_PATH=your_http_path
+DATABRICKS_TOKEN=your_token
+```
 
-\# Create .env file
+Run backend:
 
-echo DATABRICKS\_HOST=your\_workspace\_url > .env
-
-echo DATABRICKS\_HTTP\_PATH=your\_http\_path >> .env
-
-echo DATABRICKS\_TOKEN=your\_token >> .env
-
-
-
-\# Run server
-
+```bash
 python main.py
+```
 
+Backend URL:
 
+```text
+http://localhost:8000
+```
 
-Backend will be available at http://localhost:8000
+---
 
+### Frontend Setup
 
-
-Frontend Setup
-
-
-
+```bash
 cd frontend
 
-
-
-\# Install dependencies
-
 npm install
+```
 
+Create `.env.local`
 
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
 
-\# Create .env.local
+Run frontend:
 
-echo NEXT\_PUBLIC\_API\_URL=http://localhost:8000 > .env.local
-
-
-
-\# Run development server
-
+```bash
 npm run dev
+```
 
+Frontend URL:
 
+```text
+http://localhost:3000
+```
 
-Frontend will be available at http://localhost:3000
+---
 
+## 🚀 Deployment
 
+### Backend (Render)
 
-🚀 Deployment
+1. Push code to GitHub
+2. Create Render Web Service
+3. Set Root Directory:
 
-Backend (Render.com)
+```text
+backend
+```
 
-Push to GitHub
+4. Build Command
 
-Connect repository to Render
+```bash
+pip install -r requirements.txt
+```
 
-Set root directory: backend
+5. Start Command
 
-Add environment variables
+```bash
+uvicorn main:app --host 0.0.0.0 --port $PORT
+```
 
-Deploy
+6. Add Databricks environment variables
 
-Frontend (Vercel)
+7. Deploy
 
-Push to GitHub
+---
 
-Connect repository to Vercel
+### Frontend (Vercel)
 
-Set root directory: frontend
+1. Push code to GitHub
+2. Import repository into Vercel
+3. Set Root Directory:
 
-Add environment variable: NEXT\_PUBLIC\_API\_URL
+```text
+frontend
+```
 
-Deploy
+4. Add environment variable
 
-📊 API Endpoints
+```env
+NEXT_PUBLIC_API_URL=https://parksense-api.onrender.com
+```
 
-Core Statistics
+5. Deploy
 
-GET /api/stats - Dashboard statistics
+---
 
-GET /api/priority-zones - Priority enforcement zones
+## 📊 API Endpoints
 
-GET /api/hotspots - Geographic hotspots
+### Core Statistics
 
-Analytics
+```http
+GET /api/stats
+GET /api/priority-zones
+GET /api/hotspots
+GET /api/tier-distribution
+```
 
-GET /api/analytics/daily-trend - Daily violation trends
+### Analytics
 
-GET /api/analytics/hourly-pattern - 24-hour patterns
+```http
+GET /api/analytics/daily-trend
+GET /api/analytics/hourly-pattern
+GET /api/analytics/station-performance
+GET /api/analytics/growth-metrics
+```
 
-GET /api/analytics/station-performance - Police station metrics
+### Machine Learning
 
-ML Models
+```http
+GET /api/ml/forecasting
+GET /api/ml/priority-weights
+```
 
-GET /api/ml/forecasting - Next-week predictions
+### Recommendations
 
-GET /api/ml/priority-weights - ML-learned scoring weights
+```http
+GET /api/recommendations
+GET /api/critical-zone
+```
 
-🎓 Methodology
+---
 
-Priority Scoring Algorithm
+## 🎓 Methodology
 
-Priority Tiers
+### Priority Scoring Framework
 
-Critical (≥75): Immediate deployment required
+Priority scores are computed using:
 
-High (≥30): Deploy within 48 hours
+- Violation Frequency
+- Junction Impact
+- Peak Hour Violations
+- Historical Trends
 
-Medium (≥15): Regular monitoring
+### Priority Tiers
 
-Low (<15): Standard patrol coverage
+| Tier | Score | Action |
+|--------|--------|--------|
+| Critical | ≥75 | Immediate Deployment |
+| High | ≥30 | Deploy Within 48 Hours |
+| Medium | ≥15 | Weekly Monitoring |
+| Low | <15 | Standard Coverage |
 
-👥 Team
+---
 
-Developed for Bangalore Traffic Police - Gridlock Hackathon 2.0
+## 📈 Expected Impact
 
+ParkSense enables Bangalore Traffic Police to:
 
+- Identify parking hotspots proactively
+- Quantify congestion impact
+- Optimize officer deployment
+- Forecast future violations
+- Prioritize enforcement resources
+- Improve traffic flow through targeted interventions
 
-📄 License
+---
 
-MIT License - See LICENSE file for details
+## 👥 Team
 
+Developed for **Gridlock Hackathon 2.0**
 
+Bangalore Traffic Police Challenge
 
-🙏 Acknowledgments
+---
 
-Bangalore Traffic Police for providing violation data
+## 🙏 Acknowledgments
 
-Databricks for cloud platform support
+- Bangalore Traffic Police
+- Databricks
+- Gridlock Hackathon Organizers
+- Open Source Community
 
-Gridlock Hackathon organizers
+---
 
+## 📄 License
 
-
-
-
-\---
-
-
-
-\### \*\*4. Update Backend CORS\*\* (Already provided earlier, but here's the final version)
-
-
-
-Update `backend/main.py` - just the CORS section:
-
-
-
-```python
-
-\# ==================== CORS CONFIGURATION ====================
-
-
-
-app.add\_middleware(
-
-&#x20;   CORSMiddleware,
-
-&#x20;   allow\_origin\_regex=r"^https://parksense-frontend.\*\\.vercel\\.app$",  # Matches all Vercel URLs
-
-&#x20;   allow\_credentials=True,
-
-&#x20;   allow\_methods=\["\*"],
-
-&#x20;   allow\_headers=\["\*"],
-
-)
-
-
-
-
-
-
-
+MIT License
