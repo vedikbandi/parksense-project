@@ -388,7 +388,8 @@ ParkSense enables Bangalore Traffic Police to:
 ## 👥 Team : VBROCKERZ
 
 Vaibhavi Bandi- vaibhavibandi@gmail.com
-Vedik Bandi-vedikbandi@gmail.com
+
+Vedik Bandi- vedikbandi@gmail.com
 
 Developed for **Gridlock Hackathon 2.0**
 
