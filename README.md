@@ -14,7 +14,6 @@ AI-driven parking intelligence system that analyzes **258,340 parking violations
 
 ### Frontend Dashboard
 
-- https://parksense-frontend-parksense2.vercel.app
 - https://parksense-frontend-ten.vercel.app
 
 ### Backend API
